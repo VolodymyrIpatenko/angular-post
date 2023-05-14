@@ -1,0 +1,38 @@
+.post-item {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.main {
+  padding: 70px;
+  background-color: teal;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.post-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: red;
+}
+
+.post-author {
+  font-size: 14px;
+  color: #888;
+}
+
+.post-date {
+  font-size: 14px;
+  color: #888;
+}
+
+.loading {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+}

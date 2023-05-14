@@ -1,0 +1,8 @@
+<main class="main">
+  <ul class="post-list post-list_main">
+    <li *ngFor="let post of posts">
+      <img width="500" height="300" [src]="post.photo" alt="" />
+      <h2 class="post-title">{{ post.alt }}</h2>
+    </li>
+  </ul>
+</main>
