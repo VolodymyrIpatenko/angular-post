@@ -1,8 +1,32 @@
-<main class="main">
-  <ul class="post-list post-list_main">
-    <li *ngFor="let post of posts">
-      <img width="500" height="300" [src]="post.photo" alt="" />
-      <h2 class="post-title">{{ post.alt }}</h2>
-    </li>
-  </ul>
-</main>
+<div class="main">
+  <div
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()"
+    class="post-list"
+  >
+    <mat-card *ngFor="let cat of cats" class="post-item">
+      <mat-card-header>
+        <div class="post-title">{{ cat.type }}</div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="img-container">
+          <img *ngIf="cat.photo" [src]="cat.photo" width="400" height="400" />
+        </div>
+        <div class="post-date">
+          <span>{{ cat.createdAt }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- <div class="filter-section">
+    <label for="typeFilter">Filter by Type:</label>
+    <select id="typeFilter" [(ngModel)]="postType" (change)="applyFilter()">
+      <option value="">All</option>
+      <option *ngFor="let type of getUniqueTypes(cats)" [value]="type">
+        {{ type }}
+      </option>
+    </select>
+  </div> -->
+</div>

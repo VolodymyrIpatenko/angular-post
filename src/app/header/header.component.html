@@ -5,7 +5,7 @@
       *ngFor="let postType of postTypes"
       (click)="onPostTypeSelect(postType)"
     >
-      {{ postType }}
+      {{ postType || "All" }}
     </button>
     <button (click)="onPostTypeSelect('')">All</button>
   </div>

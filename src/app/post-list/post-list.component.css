@@ -1,4 +1,4 @@
-.post-item {
+/* .post-item {
   border: 1px solid #ccc;
   background-color: #fff;
 }
@@ -35,4 +35,44 @@
   font-weight: bold;
   text-align: center;
   padding: 20px;
+}
+
+p {
+  font-size: 22px;
+  color: white;
+} */
+
+.main {
+  /* display: flex;
+  justify-content: space-between; */
+  padding: 70px;
+  background-color: teal;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 30px;
+}
+
+.post-item {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.post-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: red;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.post-date {
+  font-size: 22px;
+  color: #888;
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import {Post} from '../../post';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +9,7 @@ export class HeaderComponent {
 
   @Output() postTypeSelected = new EventEmitter<string>();
 
-  postTypes: string[] = ['Hobbies', 'Favourites', 'Travel']; 
+  postTypes: string[] = ['horse', 'bird', 'fish',"snake"]; 
 
   constructor() { }
 
@@ -18,3 +18,4 @@ export class HeaderComponent {
   }
 
 }
+
