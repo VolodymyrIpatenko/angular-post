@@ -6,7 +6,7 @@
     (scrolled)="onScroll()"
     class="post-list"
   >
-    <mat-card *ngFor="let cat of cats" class="post-item">
+    <mat-card *ngFor="let cat of filteredCats" class="post-item">
       <mat-card-header>
         <div class="post-title">{{ cat.type }}</div>
       </mat-card-header>
@@ -20,13 +20,13 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <!-- <div class="filter-section">
-    <label for="typeFilter">Filter by Type:</label>
-    <select id="typeFilter" [(ngModel)]="postType" (change)="applyFilter()">
-      <option value="">All</option>
-      <option *ngFor="let type of getUniqueTypes(cats)" [value]="type">
-        {{ type }}
-      </option>
-    </select>
-  </div> -->
+  <div>
+    <input
+      class="search-input"
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search"
+      (input)="applyFilter()"
+    />
+  </div>
 </div>

@@ -11,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    FilterPipe,
     PostListComponent
   ],
   imports: [
@@ -29,7 +31,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CommonModule,
     HttpClientModule,
     InfiniteScrollModule,
-    // FormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

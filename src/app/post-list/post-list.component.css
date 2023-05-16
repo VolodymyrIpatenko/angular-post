@@ -1,52 +1,8 @@
-/* .post-item {
-  border: 1px solid #ccc;
-  background-color: #fff;
-}
-
 .main {
+  display: flex;
+  justify-content: space-around;
   padding: 70px;
-  background-color: teal;
-}
-
-.post-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-.post-title {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: red;
-}
-
-.post-author {
-  font-size: 14px;
-  color: #888;
-}
-
-.post-date {
-  font-size: 14px;
-  color: #888;
-}
-
-.loading {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
-}
-
-p {
-  font-size: 22px;
-  color: white;
-} */
-
-.main {
-  /* display: flex;
-  justify-content: space-between; */
-  padding: 70px;
-  background-color: teal;
+  background-color: #f2e7e7;
 }
 
 .post-list {
@@ -75,4 +31,17 @@ p {
 .post-date {
   font-size: 22px;
   color: #888;
+}
+
+.search-input {
+  width: 250px;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  transition: 1s;
+}
+
+.search-input:focus {
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
