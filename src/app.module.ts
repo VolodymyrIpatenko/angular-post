@@ -7,12 +7,15 @@ import { HeaderComponent } from './app/header/header.component';
 import {PostListComponent} from "./app/post-list/post-list.component";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
 import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { FilterPipe } from './filter.pipe';
     PostListComponent
   ],
   imports: [
-     MatCardModule,
+    ModalModule.forRoot(),
+    ReactiveFormsModule,
+    MatCardModule,
     ScrollingModule,
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +36,9 @@ import { FilterPipe } from './filter.pipe';
     CommonModule,
     HttpClientModule,
     InfiniteScrollModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+  MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

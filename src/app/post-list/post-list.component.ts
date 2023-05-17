@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../post';
 import { PostService } from '../../post.service';
+import { map, startWith } from "rxjs/operators";
+import { combineLatest, Observable, of } from "rxjs";
+import { debounceTime, distinctUntilChanged } from "rxjs/operators";
+import { FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-post-list',
@@ -12,11 +16,12 @@ export class PostListComponent implements OnInit {
   title = 'angular-infinite-scroll-example';
   
   page = 1;
+  
   cats: Post[] = [];
   filteredCats: Post[] = [];
   searchText!: string;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.postService
@@ -32,7 +37,7 @@ export class PostListComponent implements OnInit {
       .getPosts(++this.page)
       .subscribe((cats: Post[]) => {
         this.cats.push(...cats);
-        this.applyFilter(); // Apply filter to newly loaded cats
+        this.applyFilter(); 
       });
   }
 
@@ -42,4 +47,8 @@ export class PostListComponent implements OnInit {
       cat.type.toLowerCase().includes(searchText)
     );
   }
+
+  
 }
+
+

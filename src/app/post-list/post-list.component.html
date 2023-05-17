@@ -28,5 +28,6 @@
       placeholder="Search"
       (input)="applyFilter()"
     />
+    <p class="no-results" *ngIf="filteredCats.length === 0">No results found</p>
   </div>
 </div>

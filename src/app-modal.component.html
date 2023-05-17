@@ -1,0 +1,27 @@
+<div class="modal-overlay" (click)="modalRef.hide()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header" style="background-color: #f5f5f5; padding: 10px">
+      <button type="button" class="close-btn" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form class="modal-body" style="padding: 20px">
+      <div class="label-wrap">
+        <label class="label" for="">
+          choose file to post
+          <input type="file" />
+        </label>
+      </div>
+      <div class="label-wrap">
+        <label class="label" for="">
+          Your comment
+          <input type="datetime-local" value="" />
+        </label>
+      </div>
+      <div class="label-wrap">
+        <p>Your comment</p>
+        <textarea></textarea>
+      </div>
+    </form>
+  </div>
+</div>
