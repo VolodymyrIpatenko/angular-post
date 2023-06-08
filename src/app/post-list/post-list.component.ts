@@ -60,6 +60,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
+  startDate: string | null = null;
+  endDate: string | null = null;
+
   page = 1;
   cats: Post[] = [];
   filteredCats: Post[] = [];
@@ -110,6 +113,18 @@ export class PostListComponent implements OnInit {
         cat.topic === this.selectedPostType
       );
     }
+
+
+    if (this.startDate && this.endDate) {
+    const startDate = new Date(this.startDate);
+    const endDate = new Date(this.endDate);
+
+    filteredCats = filteredCats.filter((cat: Post) => {
+      const postDate = new Date(cat.createdAt);
+      return postDate >= startDate && postDate <= endDate;
+    });
+  }
+
 
     this.filteredCats = filteredCats;
   }

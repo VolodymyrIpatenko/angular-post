@@ -22,6 +22,21 @@
   </div>
   <div>
     <input
+      type="date"
+      [(ngModel)]="startDate"
+      (input)="applyFilter()"
+      placeholder="Start Date"
+    />
+    <input
+      type="date"
+      [(ngModel)]="endDate"
+      (input)="applyFilter()"
+      placeholder="End Date"
+    />
+  </div>
+
+  <div>
+    <input
       class="search-input"
       type="text"
       [(ngModel)]="searchText"

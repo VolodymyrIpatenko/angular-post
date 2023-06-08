@@ -7,9 +7,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
- 
   
-    
 export class PostService {
   private apiURL = 'http://localhost:3000';
 
