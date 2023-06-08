@@ -1,6 +1,6 @@
 export interface Post {
   id: number;
-  photo: string;
-  type: string; 
+  url: string;
+  topic: string; 
   createdAt: string;
 }

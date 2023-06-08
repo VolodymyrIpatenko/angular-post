@@ -3,16 +3,16 @@
     infinite-scroll
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="1000"
-    (scrolled)="onScroll()"
+    (scrolled)="loadMorePosts()"
     class="post-list"
   >
     <mat-card *ngFor="let cat of filteredCats" class="post-item">
       <mat-card-header>
-        <div class="post-title">{{ cat.type }}</div>
+        <div class="post-title">{{ cat.topic }}</div>
       </mat-card-header>
       <mat-card-content>
         <div class="img-container">
-          <img *ngIf="cat.photo" [src]="cat.photo" width="400" height="400" />
+          <img *ngIf="cat.url" [src]="cat.url" width="400" height="400" />
         </div>
         <div class="post-date">
           <span>{{ cat.createdAt }}</span>
@@ -26,8 +26,9 @@
       type="text"
       [(ngModel)]="searchText"
       placeholder="Search"
-      (input)="applyFilter()"
+      (input)="onSearchInput()"
     />
+
     <p class="no-results" *ngIf="filteredCats.length === 0">No results found</p>
   </div>
 </div>

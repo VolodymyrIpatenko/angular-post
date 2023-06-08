@@ -3,11 +3,9 @@
   <div>
     <button
       *ngFor="let postType of postTypes"
-      (click)="onPostTypeSelect(postType)"
+      (click)="filterByPostType(postType)"
     >
       {{ postType || "All" }}
     </button>
-    <button (click)="onPostTypeSelect('')">All</button>
   </div>
-  <button class="plus-button" (click)="openModal()">ADD</button>
 </header>
